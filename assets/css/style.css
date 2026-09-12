@@ -1640,7 +1640,7 @@ body.nav-open {
   }
 
   .gallery-strip {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .booking-form__footer {
@@ -1736,7 +1736,7 @@ body.nav-open {
   }
 
   .gallery-strip {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .gallery-strip__item:nth-child(even) {
@@ -1779,6 +1779,18 @@ body.nav-open {
   .members__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: clamp(1rem, 2vw, 2rem);
+  }
+
+  .member-card--cris {
+    order: 1;
+  }
+
+  .member-card--gabriel {
+    order: 2;
+  }
+
+  .member-card--jesus {
+    order: 3;
   }
 
   .events__grid {
