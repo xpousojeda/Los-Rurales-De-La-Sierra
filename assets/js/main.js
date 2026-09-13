@@ -1,4 +1,4 @@
-const BOOKING_ENDPOINT = 'PASTE_APPS_SCRIPT_URL_HERE'; // Paste the deployed Google Apps Script web app URL here.
+const BOOKING_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxlM5Zzr3afbZ_LEk_VFeQas_U1qKvtq7cQ20cAxGgyOYM4zplGCFlnOfhgd77cjxmd/exec'; // Paste the deployed Google Apps Script web app URL here.
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
