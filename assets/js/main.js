@@ -203,13 +203,13 @@ function initBookingForm() {
 
   const messages = {
     name: 'Escribe tu nombre.',
-    phone: 'Escribe un teléfono válido con al menos 10 dígitos.',
+    phone: 'Escribe un número de teléfono válido de al menos 10 dígitos.',
     email: 'Escribe un correo electrónico válido.',
     eventType: 'Selecciona el tipo de evento.',
-    eventDate: 'Selecciona una fecha futura.',
+    eventDate: 'Selecciona una fecha a partir de mañana.',
     location: 'Escribe la ubicación del evento.',
     musicHours: 'Indica entre 1 y 12 horas de música.',
-    budget: 'Escribe un presupuesto aproximado.',
+    budget: 'Escribe tu presupuesto aproximado.',
     message: 'Cuéntanos un poco sobre el evento.'
   };
 
@@ -291,7 +291,7 @@ function initBookingForm() {
 
     if (BOOKING_ENDPOINT === 'PASTE_APPS_SCRIPT_URL_HERE') {
       status.classList.add('is-error');
-      status.innerHTML = 'El formulario todavía no está conectado. Para no perder tu solicitud, llama al <a href="tel:5154222977">515-422-2977</a>.';
+      status.innerHTML = 'Por el momento el formulario no está disponible. Para que no se nos pase tu solicitud, llámanos al <a href="tel:5154222977">515-422-2977</a>.';
       return;
     }
 
@@ -310,7 +310,7 @@ function initBookingForm() {
       success.focus();
     } catch (error) {
       status.classList.add('is-error');
-      status.innerHTML = 'No pudimos enviar la solicitud. Para que no se pierda tu fecha, llama al <a href="tel:5154222977">515-422-2977</a>.';
+      status.innerHTML = 'No pudimos mandar tus datos. Para que no se nos pase tu fecha, llámanos al <a href="tel:5154222977">515-422-2977</a>.';
       setSending(false);
     }
   });
