@@ -882,6 +882,12 @@ body.nav-open {
   gap: clamp(0.5rem, 1.5vw, 1rem);
 }
 
+.gallery-strip__item:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  width: calc(50% - 0.25rem);
+  justify-self: center;
+}
+
 .gallery-strip__item {
   position: relative;
   min-width: 0;
@@ -1640,7 +1646,12 @@ body.nav-open {
   }
 
   .gallery-strip {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .gallery-strip__item:last-child:nth-child(odd) {
+    grid-column: auto;
+    width: auto;
   }
 
   .booking-form__footer {
@@ -1736,11 +1747,13 @@ body.nav-open {
   }
 
   .gallery-strip {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 72rem;
+    margin-inline: auto;
   }
 
   .gallery-strip__item:nth-child(even) {
-    transform: translateY(1.2rem);
+    transform: none;
   }
 
   .cta-band__inner {
