@@ -696,6 +696,11 @@ body.nav-open {
   filter: sepia(0.14) saturate(0.82) contrast(1.1) brightness(0.88);
 }
 
+.story__photo img {
+  aspect-ratio: auto;
+  height: auto;
+}
+
 /* Music */
 .music {
   position: relative;
