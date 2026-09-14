@@ -1940,3 +1940,15 @@ body.nav-open {
     transform: none;
   }
 }
+
+/* Keep the full band visible in the home hero on phones. */
+@media (max-width: 47.99rem) {
+  .hero__media {
+    transform: translate3d(0, var(--hero-parallax, 0px), 0);
+  }
+
+  .hero__media img {
+    object-fit: contain;
+    object-position: center 24%;
+  }
+}
