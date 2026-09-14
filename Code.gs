@@ -7,7 +7,6 @@ const HEADERS = [
   'Fecha del evento',
   'Ubicación',
   'Horas de música',
-  'Presupuesto aproximado',
   'Mensaje'
 ];
 
@@ -25,24 +24,26 @@ function doPost(e) {
     lock.waitLock(10000);
 
     try {
-      if (sheet.getLastRow() === 0) {
-        sheet.appendRow(HEADERS);
-        sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold');
-        sheet.setFrozenRows(1);
-      }
+      const headers = ensureHeaders(sheet);
+      const valuesByHeader = {
+        'Timestamp': new Date(),
+        'Nombre': safeCell(params.name),
+        'Teléfono': safeCell(params.phone),
+        'Correo electrónico': safeCell(params.email),
+        'Tipo de evento': safeCell(params.eventType),
+        'Fecha del evento': safeCell(params.eventDate),
+        'Ubicación': safeCell(params.location),
+        'Horas de música': safeCell(params.musicHours),
+        'Mensaje': safeCell(params.message)
+      };
 
-      sheet.appendRow([
-        new Date(),
-        safeCell(params.name),
-        safeCell(params.phone),
-        safeCell(params.email),
-        safeCell(params.eventType),
-        safeCell(params.eventDate),
-        safeCell(params.location),
-        safeCell(params.musicHours),
-        safeCell(params.budget),
-        safeCell(params.message)
-      ]);
+      const row = headers.map((header) => (
+        Object.prototype.hasOwnProperty.call(valuesByHeader, header)
+          ? valuesByHeader[header]
+          : ''
+      ));
+
+      sheet.appendRow(row);
     } finally {
       lock.releaseLock();
     }
@@ -52,6 +53,30 @@ function doPost(e) {
     console.error(error);
     return jsonResponse({ success: false, error: 'No se pudo guardar la solicitud.' });
   }
+}
+
+function ensureHeaders(sheet) {
+  if (sheet.getLastRow() === 0) {
+    sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
+    sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold');
+    sheet.setFrozenRows(1);
+    return HEADERS.slice();
+  }
+
+  const lastColumn = Math.max(sheet.getLastColumn(), HEADERS.length);
+  const headers = sheet
+    .getRange(1, 1, 1, lastColumn)
+    .getValues()[0]
+    .map((value) => String(value).trim());
+
+  HEADERS.forEach((header) => {
+    if (!headers.includes(header)) {
+      headers.push(header);
+      sheet.getRange(1, headers.length).setValue(header).setFontWeight('bold');
+    }
+  });
+
+  return headers;
 }
 
 function safeCell(value) {
