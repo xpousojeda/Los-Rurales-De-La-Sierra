@@ -2033,102 +2033,12 @@ body.nav-open {
   }
 }
 
-/* Desktop home hero composition. */
-@media (min-width: 48rem) {
-  .hero {
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-    place-items: initial;
-    overflow: hidden;
-  }
-
-  .hero__content {
-    display: contents;
-    padding: 0;
-  }
-
-  .hero__eyebrow,
-  .hero__title,
-  .hero__tagline {
-    order: 1;
-    width: var(--shell);
-    margin-inline: auto;
-    position: relative;
-    z-index: 2;
-    text-align: center;
-  }
-
-  .hero__eyebrow {
-    margin-top: clamp(2.1rem, 3.5vw, 3.5rem);
-    margin-bottom: 0.45rem;
-  }
-
-  .hero__title {
-    max-width: 11ch;
-    font-size: clamp(5.5rem, 9.5vw, 10rem);
-    line-height: 0.78;
-  }
-
-  .hero__tagline {
-    margin-top: clamp(0.9rem, 1.5vw, 1.35rem);
-    margin-bottom: clamp(1.6rem, 2.7vw, 2.5rem);
-    font-size: clamp(1rem, 1.45vw, 1.3rem);
-  }
-
-  .hero__media {
-    position: relative;
-    inset: auto;
-    z-index: 0;
-    order: 2;
-    width: min(100%, 1600px);
-    margin-inline: auto;
-    transform: none;
-    will-change: auto;
-    border-top: 1px solid rgba(212, 175, 55, 0.22);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.22);
-    background: var(--black);
-  }
-
-  .hero__media img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    object-position: center;
-    filter: sepia(0.12) saturate(0.82) contrast(1.12) brightness(0.82);
-  }
-
-  .hero__scrim,
-  .hero__texture {
-    display: none;
-  }
-
-  .hero__actions {
-    order: 3;
-    width: var(--shell);
-    margin: 0 auto;
-    padding-block: clamp(1.35rem, 2.2vw, 2rem) clamp(3rem, 5vw, 4.5rem);
-    position: relative;
-    z-index: 2;
-    background: var(--black);
-  }
-
-  .hero__corner {
-    top: 0.65rem;
-    opacity: 0.34;
-  }
-
-  .hero__bottom-rule {
-    bottom: clamp(0.85rem, 1.5vw, 1.25rem);
-  }
-}
-
-
-/* Refined home hero hierarchy and viewport fit. */
+/* Two-line hero wordmark hierarchy. */
 .hero__title {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: none;
   background: none;
   -webkit-background-clip: initial;
   background-clip: initial;
@@ -2170,7 +2080,7 @@ body.nav-open {
 
 .hero__title-sub {
   margin-top: -0.04em;
-  font-size: 0.61em;
+  font-size: 0.6em;
   line-height: 0.92;
 }
 
@@ -2186,87 +2096,13 @@ body.nav-open {
 }
 
 @media (min-width: 48rem) {
-  .hero {
-    height: calc(100dvh - var(--header-height));
-    min-height: 39rem;
-    max-height: 58rem;
-  }
-
-  .hero__eyebrow {
-    flex: 0 0 auto;
-    margin-top: clamp(0.9rem, 1.6vh, 1.45rem);
-    margin-bottom: 0.1rem;
-  }
-
   .hero__title {
-    flex: 0 0 auto;
-    max-width: none;
-    margin-top: 0;
-    font-size: clamp(4.2rem, 6.3vw, 7.1rem);
+    max-width: 12ch;
+    font-size: clamp(5.4rem, 10vw, 9.5rem);
     line-height: 0.7;
   }
 
   .hero__title-sub {
     font-size: 0.58em;
-  }
-
-  .hero__tagline {
-    flex: 0 0 auto;
-    margin-top: clamp(0.45rem, 0.9vh, 0.75rem);
-    margin-bottom: clamp(0.65rem, 1.2vh, 1rem);
-    font-size: clamp(0.9rem, 1.05vw, 1.08rem);
-  }
-
-  .hero__media {
-    flex: 1 1 auto;
-    min-height: 0;
-    width: 100%;
-    max-width: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border-top-color: rgba(212, 175, 55, 0.16);
-    border-bottom-color: rgba(212, 175, 55, 0.16);
-  }
-
-  .hero__media img {
-    width: auto;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-  }
-
-  .hero__actions {
-    flex: 0 0 auto;
-    margin-top: -0.35rem;
-    padding-block: clamp(0.75rem, 1.25vh, 1.05rem) clamp(1rem, 1.8vh, 1.45rem);
-  }
-
-  .hero__bottom-rule {
-    display: none;
-  }
-}
-
-@media (min-width: 48rem) and (max-height: 46rem) {
-  .hero {
-    min-height: 32rem;
-  }
-
-  .hero__eyebrow {
-    display: none;
-  }
-
-  .hero__title {
-    font-size: clamp(3.65rem, 5.5vw, 5.6rem);
-  }
-
-  .hero__tagline {
-    margin-block: 0.3rem 0.5rem;
-  }
-
-  .hero__actions {
-    padding-block: 0.55rem 0.75rem;
   }
 }
