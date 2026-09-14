@@ -208,7 +208,7 @@ function initBookingForm() {
     eventType: 'Selecciona el tipo de evento.',
     eventDate: 'Selecciona una fecha a partir de mañana.',
     location: 'Escribe la ubicación del evento.',
-    musicHours: 'Indica entre 1 y 12 horas de música.',
+    musicHours: 'La contratación mínima es de 3 horas.',
     budget: 'Escribe tu presupuesto aproximado.',
     message: 'Cuéntanos un poco sobre el evento.'
   };
@@ -243,7 +243,7 @@ function initBookingForm() {
 
     if (valid && field.name === 'musicHours') {
       const hours = Number(value);
-      valid = Number.isFinite(hours) && hours >= 1 && hours <= 12;
+      valid = Number.isFinite(hours) && hours >= 3 && hours <= 12;
     }
 
     setError(field, valid ? '' : messages[field.name]);
