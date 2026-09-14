@@ -1966,11 +1966,16 @@ body.nav-open {
   }
 
   .hero__eyebrow {
-    margin-top: clamp(3.25rem, 11vw, 4.5rem);
+    margin-top: clamp(1.8rem, 6vw, 2.5rem);
+    margin-bottom: 0.45rem;
   }
 
   .hero__tagline {
-    margin-bottom: clamp(2.25rem, 8vw, 3.25rem);
+    max-width: 30rem;
+    margin-top: 0.45rem;
+    margin-bottom: clamp(0.9rem, 3vw, 1.25rem);
+    font-size: clamp(0.76rem, 2.8vw, 0.9rem);
+    line-height: 1.45;
   }
 
   .hero__media {
