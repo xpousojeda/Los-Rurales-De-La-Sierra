@@ -1941,7 +1941,7 @@ body.nav-open {
   }
 }
 
-/* Keep the full band visible in the home hero on phones. */
+/* Mobile home hero and gallery. */
 @media (max-width: 47.99rem) {
   .hero__media {
     transform: translate3d(0, var(--hero-parallax, 0px), 0);
@@ -1950,5 +1950,20 @@ body.nav-open {
   .hero__media img {
     object-fit: contain;
     object-position: center 24%;
+  }
+
+  .hero__title {
+    font-size: clamp(3.8rem, 16vw, 6.75rem);
+  }
+
+  .gallery-strip {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 32rem;
+    margin-inline: auto;
+  }
+
+  .gallery-strip__item:last-child:nth-child(odd) {
+    grid-column: auto;
+    width: auto;
   }
 }
