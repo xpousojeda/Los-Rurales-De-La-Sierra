@@ -209,7 +209,6 @@ function initBookingForm() {
     eventDate: 'Selecciona una fecha a partir de mañana.',
     location: 'Escribe la ubicación del evento.',
     musicHours: 'La contratación mínima es de 3 horas.',
-    budget: 'Escribe tu presupuesto aproximado.',
     message: 'Cuéntanos un poco sobre el evento.'
   };
 
